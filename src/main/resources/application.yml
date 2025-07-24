@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config-server
+
+  profiles:
+    active: native
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:/Dev/Workspace/microblog/config-repo
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
