@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JeongUijeong/microblog-config-repo.git
+          default-label: main
+          search-paths: .
+          clone-on-start: true
+          username: ${GIT_USERNAME}
+          password: ${GIT_TOKEN}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
